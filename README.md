@@ -2,7 +2,7 @@
 
 A mobile application built with **Kivy** and **Python** to help college students manage their daily academic life.
 
-### Features
+#### Features
 
 - **Dashboard** – View budget overview, to-do list, GPA summary, and current grades
 - **Schedule** – Add and manage weekly class schedule with day-wise organization
