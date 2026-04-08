@@ -1,0 +1,36 @@
+{
+  "tasks": [
+    {
+      "task": "Project Milestone 2",
+      "deadline": "02/18/26"
+    },
+    {
+      "task": "Video Assignment 4.2",
+      "deadline": "02/20/26"
+    },
+    {
+      "task": "Manuscript Submission",
+      "deadline": "02/21/26"
+    },
+    {
+      "task": "Group Presentation",
+      "deadline": "02/22/26"
+    },
+    {
+      "task": "Career Fair 2026",
+      "deadline": "02/25/26"
+    },
+    {
+      "task": "Spring Festival",
+      "deadline": "02/26/26"
+    },
+    {
+      "task": "Hackathon Registration",
+      "deadline": "03/05/26"
+    },
+    {
+      "task": "Advising Meeting",
+      "deadline": "03/19/26"
+    }
+  ]
+}

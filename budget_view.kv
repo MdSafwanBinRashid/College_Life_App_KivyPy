@@ -1,0 +1,708 @@
+<BudgetView>:
+    orientation: 'vertical'
+    
+    ScrollView:
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_y: None
+            height: self.minimum_height
+            padding: 0
+            spacing: 25
+
+            Image:
+                source: 'BU 1.jpg'
+                size_hint_x: 1
+                size_hint_y: None
+                height: 280
+                allow_stretch: True
+                keep_ratio: False
+                fit_mode: 'cover'
+
+            # Section 1: Budget Highlights
+            BoxLayout:
+                id: budget_cards
+                orientation: 'horizontal'
+                size_hint_y: None
+                height: 120
+                spacing: 10
+                
+                # Card 1: Total Budget
+                BoxLayout:
+                    orientation: 'vertical'
+                    canvas.before:
+                        Color:
+                            rgba: (1, 1, 1, 1)
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [15]
+                        Color:
+                            rgba: (0, 0, 0, 0.08)
+                        RoundedRectangle:
+                            pos: (self.pos[0], self.pos[1] - 2)
+                            size: (self.size[0], self.size[1] + 4)
+                            radius: [15]
+
+                    Widget:
+                        size_hint_y: .1
+
+                    Label:
+                        text: "Total Budget"
+                        font_size: '12sp'
+                        color: (0, 0, 0, 1)
+                        size_hint_y: None
+                        height: 50
+                        halign: 'center'
+                    Label:
+                        id: total_budget_label
+                        text: "$1200"
+                        font_size: '22sp'
+                        color: (0, 0, 0.4, 1)
+                        bold: True
+                        halign: 'center'
+                
+                # Card 2: Spent
+                BoxLayout:
+                    orientation: 'vertical'
+                    canvas.before:
+                        Color:
+                            rgba: (1, 1, 1, 1)
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [15]
+                        Color:
+                            rgba: (0, 0, 0, 0.08)
+                        RoundedRectangle:
+                            pos: (self.pos[0], self.pos[1] - 2)
+                            size: (self.size[0], self.size[1] + 4)
+                            radius: [15]
+                    
+                    Widget:
+                        size_hint_y: .1
+                    
+                    Label:
+                        text: "Spent"
+                        font_size: '12sp'
+                        color: (0, 0, 0, 1)
+                        size_hint_y: None
+                        height: 50
+                        halign: 'center'
+                    Label:
+                        id: spent_amount
+                        text: "$523.50"
+                        font_size: '22sp'
+                        color: (0.8, 0.3, 0.3, 1)
+                        bold: True
+                        halign: 'center'
+                
+                # Card 3: Remaining
+                BoxLayout:
+                    orientation: 'vertical'
+                    canvas.before:
+                        Color:
+                            rgba: (1, 1, 1, 1)
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [15]
+                        Color:
+                            rgba: (0, 0, 0, 0.08)
+                        RoundedRectangle:
+                            pos: (self.pos[0], self.pos[1] - 2)
+                            size: (self.size[0], self.size[1] + 4)
+                            radius: [15]
+                    
+                    Widget:
+                        size_hint_y: .1
+                    
+                    Label:
+                        text: "Remaining"
+                        font_size: '12sp'
+                        color: (0, 0, 0, 1)
+                        size_hint_y: None
+                        height: 50
+                        halign: 'center'
+                    Label:
+                        id: remaining_amount
+                        text: "$676.50"
+                        font_size: '22sp'
+                        color: (0, 0.3, 0, 1)
+                        bold: True
+                        halign: 'center'
+
+            # Section 2: Budget Overview
+            BoxLayout:
+                orientation: 'vertical'
+                size_hint_y: None
+                height: self.minimum_height
+                spacing: 12
+                padding: [15, 15, 15, 15]
+                canvas.before:
+                    Color:
+                        rgba: (1, 1, 1, 1)
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [15]
+                    Color:
+                        rgba: (0, 0, 0, 0.08)
+                    RoundedRectangle:
+                        pos: (self.pos[0], self.pos[1] - 3)
+                        size: (self.size[0], self.size[1] + 6)
+                        radius: [15]
+
+                Label:
+                    text: "Budget Overview"
+                    font_size: '18sp'
+                    size_hint_y: None
+                    height: 40
+                    color: (0, 0, 0.4, 1)
+                    bold: True
+
+                # Food
+                BoxLayout:
+                    orientation: 'horizontal'
+                    size_hint_y: None
+                    height: 55
+                    spacing: 8
+                    Label:
+                        text: "Food"
+                        size_hint_x: 0.25
+                        font_size: '13sp'
+                        color: (0, 0, 0, 0.85)
+                        halign: 'left'
+                        valign: 'middle'
+                    Label:
+                        id: food_amount
+                        text: "$200"
+                        size_hint_x: 0.18
+                        font_size: '13sp'
+                        color: (0, 0, 0, 0.85)
+                        halign: 'left'
+                        valign: 'middle'
+                    ProgressBar:
+                        id: food_bar
+                        value: 16.7
+                        size_hint_x: 0.42
+                        size_hint_y: None
+                        height: 22
+
+                # Rent
+                BoxLayout:
+                    orientation: 'horizontal'
+                    size_hint_y: None
+                    height: 55
+                    spacing: 8
+                    Label:
+                        text: "Rent"
+                        size_hint_x: 0.25
+                        font_size: '13sp'
+                        color: (0, 0, 0, 0.85)
+                        halign: 'left'
+                        valign: 'middle'
+                    Label:
+                        id: rent_amount
+                        text: "$500"
+                        size_hint_x: 0.18
+                        font_size: '13sp'
+                        color: (0, 0, 0, 0.85)
+                        halign: 'left'
+                        valign: 'middle'
+                    ProgressBar:
+                        id: rent_bar
+                        value: 41.7
+                        size_hint_x: 0.42
+                        size_hint_y: None
+                        height: 22
+
+                # Books
+                BoxLayout:
+                    orientation: 'horizontal'
+                    size_hint_y: None
+                    height: 55
+                    spacing: 8
+                    Label:
+                        text: "Books"
+                        size_hint_x: 0.25
+                        font_size: '13sp'
+                        color: (0, 0, 0, 0.85)
+                        halign: 'left'
+                        valign: 'middle'
+                    Label:
+                        id: books_amount
+                        text: "$150"
+                        size_hint_x: 0.18
+                        font_size: '13sp'
+                        color: (0, 0, 0, 0.85)
+                        halign: 'left'
+                        valign: 'middle'
+                    ProgressBar:
+                        id: books_bar
+                        value: 12.5
+                        size_hint_x: 0.42
+                        size_hint_y: None
+                        height: 22
+
+                # Entertainment
+                BoxLayout:
+                    orientation: 'horizontal'
+                    size_hint_y: None
+                    height: 55
+                    spacing: 8
+                    Label:
+                        text: "Entertainment"
+                        size_hint_x: 0.25
+                        font_size: '13sp'
+                        color: (0, 0, 0, 0.85)
+                        halign: 'left'
+                        valign: 'middle'
+                    Label:
+                        id: entertainment_amount
+                        text: "$100"
+                        size_hint_x: 0.18
+                        font_size: '13sp'
+                        color: (0, 0, 0, 0.85)
+                        halign: 'left'
+                        valign: 'middle'
+                    ProgressBar:
+                        id: entertainment_bar
+                        value: 8.3
+                        size_hint_x: 0.42
+                        size_hint_y: None
+                        height: 22
+
+                # Transport
+                BoxLayout:
+                    orientation: 'horizontal'
+                    size_hint_y: None
+                    height: 55
+                    spacing: 8
+                    Label:
+                        text: "Transport"
+                        size_hint_x: 0.25
+                        font_size: '13sp'
+                        color: (0, 0, 0, 0.85)
+                        halign: 'left'
+                        valign: 'middle'
+                    Label:
+                        id: transport_amount
+                        text: "$250"
+                        size_hint_x: 0.18
+                        font_size: '13sp'
+                        color: (0, 0, 0, 0.85)
+                        halign: 'left'
+                        valign: 'middle'
+                    ProgressBar:
+                        id: transport_bar
+                        value: 20.8
+                        size_hint_x: 0.42
+                        size_hint_y: None
+                        height: 22
+
+            # Section 3: Add Transaction
+            BoxLayout:
+                orientation: 'vertical'
+                size_hint_y: None
+                height: self.minimum_height
+                spacing: 12
+                padding: [15, 15, 15, 15]
+                canvas.before:
+                    Color:
+                        rgba: (1, 1, 1, 1)
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [15]
+                    Color:
+                        rgba: (0, 0, 0, 0.08)
+                    RoundedRectangle:
+                        pos: (self.pos[0], self.pos[1] - 3)
+                        size: (self.size[0], self.size[1] + 6)
+                        radius: [15]
+
+                Label:
+                    text: "Add Transaction"
+                    font_size: '18sp'
+                    size_hint_y: None
+                    height: 40
+                    color: (0, 0, 0.4, 1)
+                    bold: True
+
+                TextInput:
+                    id: transaction_date
+                    hint_text: "Date (e.g., 02/17/26)"
+                    size_hint_y: None
+                    height: 50
+                    multiline: False
+                    background_color: (0.98, 0.96, 0.92, 1)
+                    foreground_color: (0, 0, 0, 0.85)
+                    cursor_color: (0.2, 0.4, 0.6, 1)
+                    padding: [15, 10, 15, 10]
+
+                Spinner:
+                    id: transaction_category
+                    text: "Select Category"
+                    values: ["Food", "Rent", "Books", "Entertainment", "Transport"]
+                    size_hint_y: None
+                    height: 50
+                    background_color: (0, 0, 0.4, 1)
+                    background_normal: ''
+                    color: (1, 1, 1, 1)
+
+                TextInput:
+                    id: transaction_amount
+                    hint_text: "Amount"
+                    size_hint_y: None
+                    height: 50
+                    multiline: False
+                    input_filter: "float"
+                    background_color: (0.98, 0.96, 0.92, 1)
+                    foreground_color: (0, 0, 0, 0.85)
+                    cursor_color: (0.2, 0.4, 0.6, 1)
+                    padding: [15, 10, 15, 10]
+
+                Button:
+                    text: "Add"
+                    size_hint_y: None
+                    height: 50
+                    background_normal: ''
+                    background_color: (0.2, 0.6, 0.3, 1)
+                    canvas.before:
+                        Color:
+                            rgba: (0.2, 0.6, 0.3, 1)
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [25]
+                        Color:
+                            rgba: (0.3, 0.7, 0.4, 0.5)
+                        RoundedRectangle:
+                            pos: (self.pos[0], self.pos[1] + self.size[1] * 0.5)
+                            size: (self.size[0], self.size[1] * 0.3)
+                            radius: [25]
+                    color: (1, 1, 1, 1)
+                    bold: True
+                    on_press: root.on_add_transaction()
+
+            # Section 4: Recent Transactions
+            BoxLayout:
+                orientation: 'vertical'
+                size_hint_y: None
+                height: self.minimum_height
+                spacing: 12
+                padding: [15, 15, 15, 15]
+                canvas.before:
+                    Color:
+                        rgba: (1, 1, 1, 0.95)
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [15]
+                    Color:
+                        rgba: (0, 0, 0, 0.08)
+                    RoundedRectangle:
+                        pos: (self.pos[0], self.pos[1] - 3)
+                        size: (self.size[0], self.size[1] + 6)
+                        radius: [15]
+
+                Label:
+                    text: "Recent Transactions"
+                    font_size: '18sp'
+                    size_hint_y: None
+                    height: 40
+                    color: (0, 0, 0.4, 1)
+                    bold: True
+
+                ScrollView:
+                    size_hint_y: None
+                    height: 250
+                    GridLayout:
+                        id: transactions_list
+                        cols: 1
+                        size_hint_y: None
+                        height: self.minimum_height
+                        spacing: 8
+                        padding: [5, 5, 5, 5]
+
+            # Section 5: Set Monthly Budget
+            BoxLayout:
+                orientation: 'vertical'
+                size_hint_y: None
+                height: self.minimum_height
+                spacing: 12
+                padding: [15, 15, 15, 15]
+                canvas.before:
+                    Color:
+                        rgba: (1, 1, 1, 1)
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [15]
+                    Color:
+                        rgba: (0, 0, 0, 0.08)
+                    RoundedRectangle:
+                        pos: (self.pos[0], self.pos[1] - 3)
+                        size: (self.size[0], self.size[1] + 6)
+                        radius: [15]
+
+                Label:
+                    text: "Set Monthly Budget"
+                    font_size: '18sp'
+                    size_hint_y: None
+                    height: 40
+                    color: (0, 0, 0.4, 1)
+                    bold: True
+
+                TextInput:
+                    id: new_budget_input
+                    hint_text: "Enter new budget amount"
+                    size_hint_y: None
+                    height: 50
+                    multiline: False
+                    input_filter: "float"
+                    background_color: (0.98, 0.96, 0.92, 1)
+                    foreground_color: (0, 0, 0, 0.85)
+                    cursor_color: (0.2, 0.4, 0.6, 1)
+                    padding: [15, 10, 15, 10]
+
+                Button:
+                    text: "Update Budget"
+                    size_hint_y: None
+                    height: 45
+                    background_normal: ''
+                    background_color: (0, 0, 0.4, 1)
+                    canvas.before:
+                        Color:
+                            rgba: (0.2, 0.4, 0.6, 1)
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [25]
+                    color: (1, 1, 1, 1)
+                    bold: True
+                    on_press: root.on_set_budget()
+
+            # Section 6: Edit Budget Overview
+            BoxLayout:
+                orientation: 'vertical'
+                size_hint_y: None
+                height: self.minimum_height
+                spacing: 12
+                padding: [15, 15, 15, 15]
+                canvas.before:
+                    Color:
+                        rgba: (1, 1, 1, 1)
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [15]
+                    Color:
+                        rgba: (0, 0, 0, 0.08)
+                    RoundedRectangle:
+                        pos: (self.pos[0], self.pos[1] - 3)
+                        size: (self.size[0], self.size[1] + 6)
+                        radius: [15]
+
+                Label:
+                    text: "Edit Budget Overview"
+                    font_size: '18sp'
+                    size_hint_y: None
+                    height: 40
+                    color: (0, 0, 0.4, 1)
+                    bold: True
+
+                # Food
+                BoxLayout:
+                    orientation: 'horizontal'
+                    size_hint_y: None
+                    height: 50
+                    spacing: 10
+                    Label:
+                        text: "Food"
+                        size_hint_x: 0.3
+                        font_size: '14sp'
+                        color: (0, 0, 0, 0.85)
+                    TextInput:
+                        id: food_input
+                        hint_text: "New amount"
+                        size_hint_x: 0.5
+                        size_hint_y: None
+                        height: 40
+                        multiline: False
+                        input_filter: "float"
+                        background_color: (0.98, 0.96, 0.92, 1)
+                        foreground_color: (0, 0, 0, 0.85)
+                    Button:
+                        text: "Save"
+                        size_hint_x: 0.2
+                        size_hint_y: None
+                        height: 40
+                        background_normal: ''
+                        background_color: (0, 0, 0.4, 1)
+                        canvas.before:
+                            Color:
+                                rgba: (0.2, 0.4, 0.6, 1)
+                            RoundedRectangle:
+                                pos: self.pos
+                                size: self.size
+                                radius: [20]
+                        color: (1, 1, 1, 1)
+                        bold: True
+                        on_press: root.on_save_category("Food")
+
+                # Rent
+                BoxLayout:
+                    orientation: 'horizontal'
+                    size_hint_y: None
+                    height: 50
+                    spacing: 10
+                    Label:
+                        text: "Rent"
+                        size_hint_x: 0.3
+                        font_size: '14sp'
+                        color: (0, 0, 0, 0.85)
+                    TextInput:
+                        id: rent_input
+                        hint_text: "New amount"
+                        size_hint_x: 0.5
+                        size_hint_y: None
+                        height: 40
+                        multiline: False
+                        input_filter: "float"
+                        background_color: (0.98, 0.96, 0.92, 1)
+                        foreground_color: (0, 0, 0, 0.85)
+                    Button:
+                        text: "Save"
+                        size_hint_x: 0.2
+                        size_hint_y: None
+                        height: 40
+                        background_normal: ''
+                        background_color: (0, 0, 0.4, 1)
+                        canvas.before:
+                            Color:
+                                rgba: (0.2, 0.4, 0.6, 1)
+                            RoundedRectangle:
+                                pos: self.pos
+                                size: self.size
+                                radius: [20]
+                        color: (1, 1, 1, 1)
+                        bold: True
+                        on_press: root.on_save_category("Rent")
+
+                # Books
+                BoxLayout:
+                    orientation: 'horizontal'
+                    size_hint_y: None
+                    height: 50
+                    spacing: 10
+                    Label:
+                        text: "Books"
+                        size_hint_x: 0.3
+                        font_size: '14sp'
+                        color: (0, 0, 0, 0.85)
+                    TextInput:
+                        id: books_input
+                        hint_text: "New amount"
+                        size_hint_x: 0.5
+                        size_hint_y: None
+                        height: 40
+                        multiline: False
+                        input_filter: "float"
+                        background_color: (0.98, 0.96, 0.92, 1)
+                        foreground_color: (0, 0, 0, 0.85)
+                    Button:
+                        text: "Save"
+                        size_hint_x: 0.2
+                        size_hint_y: None
+                        height: 40
+                        background_normal: ''
+                        background_color: (0, 0, 0.4, 1)
+                        canvas.before:
+                            Color:
+                                rgba: (0.2, 0.4, 0.6, 1)
+                            RoundedRectangle:
+                                pos: self.pos
+                                size: self.size
+                                radius: [20]
+                        color: (1, 1, 1, 1)
+                        bold: True
+                        on_press: root.on_save_category("Books")
+
+                # Entertainment
+                BoxLayout:
+                    orientation: 'horizontal'
+                    size_hint_y: None
+                    height: 50
+                    spacing: 10
+                    Label:
+                        text: "Entertainment"
+                        size_hint_x: 0.3
+                        font_size: '14sp'
+                        color: (0, 0, 0, 0.85)
+                    TextInput:
+                        id: entertainment_input
+                        hint_text: "New amount"
+                        size_hint_x: 0.5
+                        size_hint_y: None
+                        height: 40
+                        multiline: False
+                        input_filter: "float"
+                        background_color: (0.98, 0.96, 0.92, 1)
+                        foreground_color: (0, 0, 0, 0.85)
+                    Button:
+                        text: "Save"
+                        size_hint_x: 0.2
+                        size_hint_y: None
+                        height: 40
+                        background_normal: ''
+                        background_color: (0, 0, 0.4, 1)
+                        canvas.before:
+                            Color:
+                                rgba: (0.2, 0.4, 0.6, 1)
+                            RoundedRectangle:
+                                pos: self.pos
+                                size: self.size
+                                radius: [20]
+                        color: (1, 1, 1, 1)
+                        bold: True
+                        on_press: root.on_save_category("Entertainment")
+
+                # Transport
+                BoxLayout:
+                    orientation: 'horizontal'
+                    size_hint_y: None
+                    height: 50
+                    spacing: 10
+                    Label:
+                        text: "Transport"
+                        size_hint_x: 0.3
+                        font_size: '14sp'
+                        color: (0, 0, 0, 0.85)
+                    TextInput:
+                        id: transport_input
+                        hint_text: "New amount"
+                        size_hint_x: 0.5
+                        size_hint_y: None
+                        height: 40
+                        multiline: False
+                        input_filter: "float"
+                        background_color: (0.98, 0.96, 0.92, 1)
+                        foreground_color: (0, 0, 0, 0.85)
+                    Button:
+                        text: "Save"
+                        size_hint_x: 0.2
+                        size_hint_y: None
+                        height: 40
+                        background_normal: ''
+                        background_color: (0, 0, 0.4, 1)
+                        canvas.before:
+                            Color:
+                                rgba: (0.2, 0.4, 0.6, 1)
+                            RoundedRectangle:
+                                pos: self.pos
+                                size: self.size
+                                radius: [20]
+                        color: (1, 1, 1, 1)
+                        bold: True
+                        on_press: root.on_save_category("Transport")

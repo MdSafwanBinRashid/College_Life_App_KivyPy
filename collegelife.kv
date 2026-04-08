@@ -1,0 +1,169 @@
+<MainLayout>:
+    orientation: 'vertical'
+    padding: 0
+    spacing: 0
+
+    canvas.before:
+        Color:
+            rgba: (0, 0, 0.15, 1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    # Header
+    BoxLayout:
+        size_hint_y: 0.1
+        spacing: 10
+
+        # Logo 
+        BoxLayout:
+            size_hint_x: None
+            width: 120
+            padding: [20, 0, 0, -10]
+            Image:
+                source: 'USM 26.jpg'
+                size_hint_x: None
+                width: 85
+                allow_stretch: True
+                keep_ratio: True
+                pos_hint: {'center_y': 0.5}
+
+        # Title
+        Label:
+            text: "College Life App"
+            font_size: '24sp'
+            font_name: 'Georgia'
+            color: (1, 1, 1, 1)
+            size_hint_x: 1
+            halign: 'center'
+            valign: 'middle'
+
+        # Menu Button
+        Button:
+            text: "> "
+            font_size: '35sp'
+            size_hint_x: None
+            width: 70
+            padding: [0, 0, 20, -10]
+            background_normal: ''
+            background_color: (0, 0, 0, 0)
+            color: (1, 1, 1, 1)
+            on_press: root.toggle_menu()
+
+    # Menu Overlay
+    BoxLayout:
+        id: menu_overlay
+        orientation: 'vertical'
+        size_hint_y: None
+        height: 0
+        opacity: 0
+        canvas.before:
+            Color:
+                rgba: (0, 0, 0.15, 1)
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        ScrollView:
+            BoxLayout:
+                orientation: 'vertical'
+                size_hint_y: None
+                height: self.minimum_height
+                spacing: 15
+                padding: [20, 30, 20, 30]
+
+                Button:
+                    text: "Dashboard"
+                    font_size: '18sp'
+                    font_name: 'Georgia'
+                    background_normal: ''
+                    background_color: (0, 0, 0.4, 1)
+                    color: (1, 1, 1, 1)
+                    size_hint_y: None
+                    height: 50
+                    on_press: root.select_tab("Dashboard")
+
+                Button:
+                    text: "Schedule"
+                    font_size: '18sp'
+                    font_name: 'Georgia'
+                    background_normal: ''
+                    background_color: (0, 0, 0.4, 1)
+                    color: (1, 1, 1, 1)
+                    size_hint_y: None
+                    height: 50
+                    on_press: root.select_tab("Schedule")
+
+                Button:
+                    text: "Budgeting"
+                    font_size: '18sp'
+                    font_name: 'Georgia'
+                    background_normal: ''
+                    background_color: (0, 0, 0.4, 1)
+                    color: (1, 1, 1, 1)
+                    size_hint_y: None
+                    height: 50
+                    on_press: root.select_tab("Budgeting")
+
+                Button:
+                    text: "Social Hub"
+                    font_size: '18sp'
+                    font_name: 'Georgia'
+                    background_normal: ''
+                    background_color: (0, 0, 0.4, 1)
+                    color: (1, 1, 1, 1)
+                    size_hint_y: None
+                    height: 50
+                    on_press: root.select_tab("Social Hub")
+
+                Button:
+                    text: "Flashcards"
+                    font_size: '18sp'
+                    font_name: 'Georgia'
+                    background_normal: ''
+                    background_color: (0, 0, 0.4, 1)
+                    color: (1, 1, 1, 1)
+                    size_hint_y: None
+                    height: 50
+                    on_press: root.select_tab("Flashcards")
+
+                Button:
+                    text: "Settings"
+                    font_size: '18sp'
+                    font_name: 'Georgia'
+                    background_normal: ''
+                    background_color: (0, 0, 0.4, 1)
+                    color: (1, 1, 1, 1)
+                    size_hint_y: None
+                    height: 50
+                    on_press: root.select_tab("Settings")
+
+                Button:
+                    text: "Close Menu"
+                    font_size: '18sp'
+                    font_name: 'Georgia'
+                    background_normal: ''
+                    background_color: (0.8, 0.2, 0.2, 1)
+                    color: (1, 1, 1, 1)
+                    size_hint_y: None
+                    height: 50
+                    on_press: root.toggle_menu()
+
+    # Content
+    BoxLayout:
+        id: content_area
+        orientation: 'vertical'
+        size_hint_y: 0.9
+        padding: [10, 10, 10, 10]
+        spacing: 15
+
+<Section>:
+    orientation: 'vertical'
+    padding: [15, 15, 15, 15]
+    spacing: 8
+    canvas.before:
+        Color:
+            rgba: (0, 0, 0, 0.08)
+        Rectangle:
+            pos: self.pos
+            size: self.size

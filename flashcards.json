@@ -1,0 +1,50 @@
+[
+  {
+    "question": "What is a variable?",
+    "answer": "A container for storing data values"
+  },
+  {
+    "question": "What does HTML stand for?",
+    "answer": "Hypertext Markup Language"
+  },
+  {
+    "question": "What is the mean of 2, 4, 6, 8?",
+    "answer": "5"
+  },
+  {
+    "question": "Symbol for the sample mean?",
+    "answer": "x\u0304 (x-bar)"
+  },
+  {
+    "question": "Newton's second law of motion?",
+    "answer": "F = ma"
+  },
+  {
+    "question": "Speed of light in vacuum?",
+    "answer": "3 \u00d7 10\u2078 m/s"
+  },
+  {
+    "question": "Chemical symbol for gold?",
+    "answer": "Au"
+  },
+  {
+    "question": "pH of pure water?",
+    "answer": "7"
+  },
+  {
+    "question": "Organelle known as the powerhouse?",
+    "answer": "Mitochondria"
+  },
+  {
+    "question": "Process by which plants make food?",
+    "answer": "Photosynthesis"
+  },
+  {
+    "question": "Unit of electric current?",
+    "answer": "Ampere (A)"
+  },
+  {
+    "question": "Formula for standard deviation?",
+    "answer": "\u221a(\u03a3(x - x\u0304)\u00b2 / n)"
+  }
+]

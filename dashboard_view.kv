@@ -1,0 +1,605 @@
+<DashboardView>:
+    orientation: 'vertical'
+    
+    ScrollView:
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_y: None
+            height: self.minimum_height
+            padding: 0
+            spacing: 15
+
+            Image:
+                source: 'USM 14.jpg'
+                size_hint_x: 1
+                size_hint_y: None
+                height: self.texture.height / self.texture.width * self.width if self.texture else 150
+                allow_stretch: True
+                keep_ratio: True
+    
+            # --- Current Grades Section ---
+            BoxLayout:
+                orientation: 'vertical'
+                size_hint_y: None
+                height: 380
+                spacing: 12
+                padding: [15, 15, 15, 15]
+                canvas.before:
+                    Color:
+                        rgba: (1, 1, 1, 1)
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [15]
+                    Color:
+                        rgba: (0, 0, 0, 0.08)
+                    RoundedRectangle:
+                        pos: (self.pos[0], self.pos[1] - 3)
+                        size: (self.size[0], self.size[1] + 6)
+                        radius: [15]
+
+                Label:
+                    text: "Current Grades"
+                    font_size: '18sp'
+                    size_hint_y: None
+                    height: 200
+                    color: (0, 0, 0.4, 1)
+                    bold: True
+                    halign: 'center'
+   
+                # Grade Rows
+                BoxLayout:
+                    orientation: 'vertical'
+                    size_hint_y: None
+                    height: 220
+                    spacing: 8
+
+                    # CSC102
+                    BoxLayout:
+                        orientation: 'horizontal'
+                        size_hint_y: None
+                        height: 35
+                        spacing: 10
+                        padding: [10, 5, 10, 5]
+                        canvas.before:
+                            Color:
+                                rgba: (0.97, 0.97, 0.97, 1)
+                            RoundedRectangle:
+                                pos: self.pos
+                                size: self.size
+                                radius: [8]
+                        
+                        Label:
+                            text: "CSC102"
+                            font_size: '14sp'
+                            color: (0.1, 0.1, 0.1, 1)
+                            size_hint_x: 0.5
+                            halign: 'left'
+                            valign: 'middle'
+                            text_size: self.width, None
+                        Label:
+                            text: "88.5%"
+                            font_size: '14sp'
+                            color: (0.2, 0.6, 0.85, 1)
+                            bold: True
+                            size_hint_x: 0.5
+                            halign: 'right'
+                            valign: 'middle'
+                            text_size: self.width, None
+
+                    # MAT327
+                    BoxLayout:
+                        orientation: 'horizontal'
+                        size_hint_y: None
+                        height: 35
+                        spacing: 10
+                        padding: [10, 5, 10, 5]
+                        canvas.before:
+                            Color:
+                                rgba: (0.97, 0.97, 0.97, 1)
+                            RoundedRectangle:
+                                pos: self.pos
+                                size: self.size
+                                radius: [8]
+                        
+                        Label:
+                            text: "MAT327"
+                            font_size: '14sp'
+                            color: (0.1, 0.1, 0.1, 1)
+                            size_hint_x: 0.5
+                            halign: 'left'
+                            valign: 'middle'
+                            text_size: self.width, None
+                        Label:
+                            text: "76.0%"
+                            font_size: '14sp'
+                            color: (0.9, 0.55, 0.2, 1)
+                            bold: True
+                            size_hint_x: 0.5
+                            halign: 'right'
+                            valign: 'middle'
+                            text_size: self.width, None
+
+                    # PHY111
+                    BoxLayout:
+                        orientation: 'horizontal'
+                        size_hint_y: None
+                        height: 35
+                        spacing: 10
+                        padding: [10, 5, 10, 5]
+                        canvas.before:
+                            Color:
+                                rgba: (0.97, 0.97, 0.97, 1)
+                            RoundedRectangle:
+                                pos: self.pos
+                                size: self.size
+                                radius: [8]
+                        
+                        Label:
+                            text: "PHY111"
+                            font_size: '14sp'
+                            color: (0.1, 0.1, 0.1, 1)
+                            size_hint_x: 0.5
+                            halign: 'left'
+                            valign: 'middle'
+                            text_size: self.width, None
+                        Label:
+                            text: "92.0%"
+                            font_size: '14sp'
+                            color: (0.2, 0.7, 0.3, 1)
+                            bold: True
+                            size_hint_x: 0.5
+                            halign: 'right'
+                            valign: 'middle'
+                            text_size: self.width, None
+
+                    # CSC327
+                    BoxLayout:
+                        orientation: 'horizontal'
+                        size_hint_y: None
+                        height: 35
+                        spacing: 10
+                        padding: [10, 5, 10, 5]
+                        canvas.before:
+                            Color:
+                                rgba: (0.97, 0.97, 0.97, 1)
+                            RoundedRectangle:
+                                pos: self.pos
+                                size: self.size
+                                radius: [8]
+                        
+                        Label:
+                            text: "CSC327"
+                            font_size: '14sp'
+                            color: (0.1, 0.1, 0.1, 1)
+                            size_hint_x: 0.5
+                            halign: 'left'
+                            valign: 'middle'
+                            text_size: self.width, None
+                        Label:
+                            text: "81.5%"
+                            font_size: '14sp'
+                            color: (0.2, 0.6, 0.85, 1)
+                            bold: True
+                            size_hint_x: 0.5
+                            halign: 'right'
+                            valign: 'middle'
+                            text_size: self.width, None
+
+                    # ENG203
+                    BoxLayout:
+                        orientation: 'horizontal'
+                        size_hint_y: None
+                        height: 35
+                        spacing: 10
+                        padding: [10, 5, 10, 5]
+                        canvas.before:
+                            Color:
+                                rgba: (0.97, 0.97, 0.97, 1)
+                            RoundedRectangle:
+                                pos: self.pos
+                                size: self.size
+                                radius: [8]
+                        
+                        Label:
+                            text: "ENG203"
+                            font_size: '14sp'
+                            color: (0.1, 0.1, 0.1, 1)
+                            size_hint_x: 0.5
+                            halign: 'left'
+                            valign: 'middle'
+                            text_size: self.width, None
+                        Label:
+                            text: "79.0%"
+                            font_size: '14sp'
+                            color: (0.9, 0.55, 0.2, 1)
+                            bold: True
+                            size_hint_x: 0.5
+                            halign: 'right'
+                            valign: 'middle'
+                            text_size: self.width, None
+
+                    # CSC411
+                    BoxLayout:
+                        orientation: 'horizontal'
+                        size_hint_y: None
+                        height: 35
+                        spacing: 10
+                        padding: [10, 5, 10, 5]
+                        canvas.before:
+                            Color:
+                                rgba: (0.97, 0.97, 0.97, 1)
+                            RoundedRectangle:
+                                pos: self.pos
+                                size: self.size
+                                radius: [8]
+                        
+                        Label:
+                            text: "CSC411"
+                            font_size: '14sp'
+                            color: (0.1, 0.1, 0.1, 1)
+                            size_hint_x: 0.5
+                            halign: 'left'
+                            valign: 'middle'
+                            text_size: self.width, None
+                        Label:
+                            text: "85.0%"
+                            font_size: '14sp'
+                            color: (0.2, 0.6, 0.85, 1)
+                            bold: True
+                            size_hint_x: 0.5
+                            halign: 'right'
+                            valign: 'middle'
+                            text_size: self.width, None
+
+                    # CHE340
+                    BoxLayout:
+                        orientation: 'horizontal'
+                        size_hint_y: None
+                        height: 35
+                        spacing: 10
+                        padding: [10, 5, 10, 5]
+                        canvas.before:
+                            Color:
+                                rgba: (0.97, 0.97, 0.97, 1)
+                            RoundedRectangle:
+                                pos: self.pos
+                                size: self.size
+                                radius: [8]
+                        
+                        Label:
+                            text: "CHE340"
+                            font_size: '14sp'
+                            color: (0.1, 0.1, 0.1, 1)
+                            size_hint_x: 0.5
+                            halign: 'left'
+                            valign: 'middle'
+                            text_size: self.width, None
+                        Label:
+                            text: "68.0%"
+                            font_size: '14sp'
+                            color: (0.85, 0.4, 0.2, 1)
+                            bold: True
+                            size_hint_x: 0.5
+                            halign: 'right'
+                            valign: 'middle'
+                            text_size: self.width, None
+
+
+            # --- To-Do List ---
+            BoxLayout:
+                orientation: 'vertical'
+                size_hint_y: None
+                height: self.minimum_height
+                spacing: 15
+                padding: [15, 15, 15, 15]
+                canvas.before:
+                    Color:
+                        rgba: (1, 1, 1, 1)
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [15]
+                    Color:
+                        rgba: (0, 0, 0, 0.08)
+                    RoundedRectangle:
+                        pos: (self.pos[0], self.pos[1] - 3)
+                        size: (self.size[0], self.size[1] + 6)
+                        radius: [15]
+
+                Label:
+                    text: "To-Do List"
+                    font_size: '18sp'
+                    size_hint_y: None
+                    height: 45
+                    halign: 'center'
+                    color: (0, 0, 0.4, 1)
+                    bold: True
+
+                GridLayout:
+                    id: todo_list
+                    cols: 1
+                    size_hint_y: None
+                    height: self.minimum_height
+                    spacing: 10
+                    padding: [5, 5, 5, 5]
+
+            # --- Add New Task ---
+            BoxLayout:
+                orientation: 'vertical'
+                size_hint_y: None
+                height: self.minimum_height
+                spacing: 15
+                padding: [15, 15, 15, 15]
+                canvas.before:
+                    Color:
+                        rgba: (1, 1, 1, 1)
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [15]
+                    Color:
+                        rgba: (0, 0, 0, 0.08)
+                    RoundedRectangle:
+                        pos: (self.pos[0], self.pos[1] - 3)
+                        size: (self.size[0], self.size[1] + 6)
+                        radius: [15]
+
+                Label:
+                    text: "Add New Task"
+                    font_size: '18sp'
+                    size_hint_y: None
+                    height: 45
+                    halign: 'center'
+                    color: (0, 0, 0.4, 1)
+                    bold: True
+
+                TextInput:
+                    id: task_input
+                    hint_text: "Task name"
+                    size_hint_y: None
+                    height: 50
+                    multiline: False
+                    background_color: (0.98, 0.96, 0.92, 1)
+                    foreground_color: (0, 0, 0, 0.85)
+                    cursor_color: (0.2, 0.4, 0.6, 1)
+                    padding: [15, 10, 15, 10]
+
+                TextInput:
+                    id: deadline_input
+                    hint_text: "Deadline (e.g., 04/06/2026)"
+                    size_hint_y: None
+                    height: 50
+                    multiline: False
+                    background_color: (0.98, 0.96, 0.92, 1)
+                    foreground_color: (0, 0, 0, 0.85)
+                    cursor_color: (0.2, 0.4, 0.6, 1)
+                    padding: [15, 10, 15, 10]
+
+                Button:
+                    text: "Add"
+                    size_hint_y: None
+                    height: 50
+                    background_normal: ''
+                    background_color: (0.2, 0.6, 0.3, 1)
+                    canvas.before:
+                        Color:
+                            rgba: (0.2, 0.6, 0.3, 1)
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [25]
+                        Color:
+                            rgba: (0.3, 0.7, 0.4, 0.5)
+                        RoundedRectangle:
+                            pos: (self.pos[0], self.pos[1] + self.size[1] * 0.5)
+                            size: (self.size[0], self.size[1] * 0.3)
+                            radius: [25]
+                    color: (1, 1, 1, 1)
+                    bold: True
+                    on_press: root.on_add_task()
+
+            # --- Budget Overview ---
+            BoxLayout:
+                orientation: 'vertical'
+                size_hint_y: None
+                height: self.minimum_height
+                spacing: 15
+                padding: [15, 15, 15, 15]
+                canvas.before:
+                    Color:
+                        rgba: (1, 1, 1, 1)
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [15]
+                    Color:
+                        rgba: (0, 0, 0, 0.08)
+                    RoundedRectangle:
+                        pos: (self.pos[0], self.pos[1] - 3)
+                        size: (self.size[0], self.size[1] + 6)
+                        radius: [15]
+
+                Label:
+                    text: "Budget Overview"
+                    font_size: '18sp'
+                    size_hint_y: None
+                    height: 45
+                    halign: 'center'
+                    color: (0, 0, 0.4, 1)
+                    bold: True
+
+                # Total Budget
+                BoxLayout:
+                    orientation: 'horizontal'
+                    size_hint_y: None
+                    height: 40
+                    spacing: 15
+                    Label:
+                        text: "Total Budget:"
+                        size_hint_x: 0.5
+                        font_size: '14sp'
+                        color: (0, 0, 0, 0.85)
+                        halign: 'left'
+                        valign: 'middle'
+                        text_size: self.width, None
+                    Label:
+                        id: total_budget_label
+                        text: "$1200"
+                        size_hint_x: 0.5
+                        font_size: '16sp'
+                        color: (0, 0, 0.4, 1)
+                        bold: True
+                        halign: 'right'
+                        valign: 'middle'
+                        text_size: self.width, None
+
+                # Remaining Balance
+                BoxLayout:
+                    orientation: 'horizontal'
+                    size_hint_y: None
+                    height: 40
+                    spacing: 15
+                    Label:
+                        text: "Remaining:"
+                        size_hint_x: 0.5
+                        font_size: '14sp'
+                        color: (0, 0, 0, 0.85)
+                        halign: 'left'
+                        valign: 'middle'
+                        text_size: self.width, None
+                    Label:
+                        id: remaining_label
+                        text: "$676.50"
+                        size_hint_x: 0.5
+                        font_size: '16sp'
+                        color: (0, 0.3, 0, 1)
+                        bold: True
+                        halign: 'right'
+                        valign: 'middle'
+                        text_size: self.width, None
+
+                # Progress Bar
+                ProgressBar:
+                    id: budget_progress
+                    value: 0.44
+                    size_hint_y: None
+                    height: 25
+                    canvas.before:
+                        Color:
+                            rgba: (0, 0, 0, 0)
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [12]
+                    canvas.after:
+                        Color:
+                            rgba: (0, 0, 0.4, 1)
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: (self.width * self.value, self.height)
+                            radius: [12]
+
+            # --- GPA Overview ---
+            BoxLayout:
+                orientation: 'vertical'
+                size_hint_y: None
+                height: self.minimum_height
+                spacing: 15
+                padding: [15, 15, 15, 15]
+                canvas.before:
+                    Color:
+                        rgba: (1, 1, 1, 0.95)
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [15]
+                    Color:
+                        rgba: (0, 0, 0, 0.08)
+                    RoundedRectangle:
+                        pos: (self.pos[0], self.pos[1] - 3)
+                        size: (self.size[0], self.size[1] + 6)
+                        radius: [15]
+
+                Label:
+                    text: "GPA Overview"
+                    font_size: '18sp'
+                    size_hint_y: None
+                    height: 45
+                    halign: 'center'
+                    color: (0, 0, 0.4, 1)
+                    bold: True
+
+                BoxLayout:
+                    orientation: 'horizontal'
+                    size_hint_y: None
+                    height: 50
+                    spacing: 15
+                    Label:
+                        text: "CGPA"
+                        size_hint_x: 0.5
+                        font_size: '14sp'
+                        color: (0, 0, 0, 0.85)
+                        halign: 'left'
+                        valign: 'middle'
+                        text_size: self.width, None
+                    Label:
+                        text: root.cgpa
+                        size_hint_x: 0.5
+                        font_size: '16sp'
+                        color: (0, 0.3, 0, 1)
+                        halign: 'right'
+                        valign: 'middle'
+                        bold: True
+                        text_size: self.width, None
+
+                BoxLayout:
+                    orientation: 'horizontal'
+                    size_hint_y: None
+                    height: 50
+                    spacing: 15
+                    Label:
+                        text: "Credits Completed"
+                        size_hint_x: 0.5
+                        font_size: '14sp'
+                        color: (0, 0, 0, 0.85)
+                        halign: 'left'
+                        valign: 'middle'
+                        text_size: self.width, None
+                    Label:
+                        text: root.credits
+                        size_hint_x: 0.5
+                        font_size: '16sp'
+                        color: (0, 0.3, 0, 1)
+                        bold: True
+                        halign: 'right'
+                        valign: 'middle'
+                        text_size: self.width, None
+
+                BoxLayout:
+                    orientation: 'horizontal'
+                    size_hint_y: None
+                    height: 50
+                    spacing: 15
+                    Label:
+                        text: "Dean's List"
+                        size_hint_x: 0.5
+                        font_size: '14sp'
+                        color: (0, 0, 0, 0.85)
+                        halign: 'left'
+                        valign: 'middle'
+                        text_size: self.width, None
+                    Label:
+                        text: root.deans_list
+                        size_hint_x: 0.5
+                        font_size: '16sp'
+                        color: (0, 0.3, 0, 1)
+                        bold: True
+                        halign: 'right'
+                        valign: 'middle'
+                        text_size: self.width, None
+
+            # Bottom spacer
+            Widget:
+                size_hint_y: None
+                height: 10

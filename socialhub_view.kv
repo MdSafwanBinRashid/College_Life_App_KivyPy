@@ -1,0 +1,676 @@
+<SocialHubView>:
+    orientation: 'vertical'
+    
+    ScrollView:
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_y: None
+            height: self.minimum_height
+            padding: 0
+            spacing: 40
+
+            # Section: Upcoming Campus Events
+            BoxLayout:
+                orientation: 'vertical'
+                size_hint_y: None
+                height: self.minimum_height
+                spacing: 40
+                padding: [20, 20, 20, 20]
+                canvas.before:
+                    Color:
+                        rgba: (1, 1, 1, 1)
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [15]
+                    Color:
+                        rgba: (0, 0, 0, 0.08)
+                    RoundedRectangle:
+                        pos: (self.pos[0], self.pos[1] - 3)
+                        size: (self.size[0], self.size[1] + 6)
+                        radius: [15]
+
+                Label:
+                    text: "Upcoming Campus Events"
+                    font_size: '18sp'
+                    size_hint_y: None
+                    height: 45
+                    color: (0, 0, 0.4, 1)
+                    bold: True
+
+                Image:
+                    source: 'USM 12.jpg'
+                    size_hint_x: 1
+                    size_hint_y: None
+                    height: 250
+                    allow_stretch: True
+                    keep_ratio: False
+                    fit_mode: 'cover'
+
+                # Event 1: Career Fair
+                BoxLayout:
+                    orientation: 'horizontal'
+                    size_hint_y: None
+                    height: 155
+                    spacing: 15
+                    padding: [15, 15, 15, 15]
+                    canvas.before:
+                        Color:
+                            rgba: (0.98, 0.96, 0.92, 1)
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [12]
+                    
+                    Label:
+                        text: "Feb 15"
+                        size_hint_x: 0.2
+                        font_size: '15sp'
+                        color: (0, 0, 0.4, 1)
+                        bold: True
+                        halign: 'center'
+                        valign: 'middle'
+                    
+                    BoxLayout:
+                        orientation: 'vertical'
+                        size_hint_x: 0.8
+                        spacing: 6
+                        Label:
+                            text: "Career Fair 2026"
+                            font_size: '15sp'
+                            color: (0, 0, 0, 0.85)
+                            bold: True
+                            halign: 'left'
+                            size_hint_y: None
+                            height: 28
+                        Label:
+                            text: "RC Cook Union"
+                            font_size: '12sp'
+                            color: (0.5, 0.5, 0.5, 1)
+                            halign: 'left'
+                            size_hint_y: None
+                            height: 22
+                        Label:
+                            text: "10:00 AM - 4:00 PM"
+                            font_size: '12sp'
+                            color: (0.5, 0.5, 0.5, 1)
+                            halign: 'left'
+                            size_hint_y: None
+                            height: 22
+                        Button:
+                            text: "Add to Calendar"
+                            size_hint_y: None
+                            height: 38
+                            background_normal: ''
+                            background_color: (0, 0, 0.4, 1)
+                            canvas.before:
+                                Color:
+                                    rgba: (0.2, 0.4, 0.6, 1)
+                                RoundedRectangle:
+                                    pos: self.pos
+                                    size: self.size
+                                    radius: [19]
+                            color: (1, 1, 1, 1)
+                            bold: True
+                            on_press: root.on_add_to_calendar("Career Fair 2026")
+
+                Image:
+                    source: 'USM 2.jpg'
+                    size_hint_x: 1
+                    size_hint_y: None
+                    height: 250
+                    allow_stretch: True
+                    keep_ratio: False
+                    fit_mode: 'cover'
+
+                # Event 2: Basketball Game
+                BoxLayout:
+                    orientation: 'horizontal'
+                    size_hint_y: None
+                    height: 155
+                    spacing: 15
+                    padding: [15, 15, 15, 15]
+                    canvas.before:
+                        Color:
+                            rgba: (0.98, 0.96, 0.92, 1)
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [12]
+
+                    Label:
+                        text: "Feb 20"
+                        size_hint_x: 0.2
+                        font_size: '15sp'
+                        color: (0, 0, 0.4, 1)
+                        bold: True
+                        halign: 'center'
+                        valign: 'middle'
+                    
+                    BoxLayout:
+                        orientation: 'vertical'
+                        size_hint_x: 0.8
+                        spacing: 6
+                        Label:
+                            text: "Basketball Game: Uni vs State"
+                            font_size: '15sp'
+                            color: (0, 0, 0, 0.85)
+                            bold: True
+                            halign: 'left'
+                            size_hint_y: None
+                            height: 28
+                        Label:
+                            text: "Rock Arena"
+                            font_size: '12sp'
+                            color: (0.5, 0.5, 0.5, 1)
+                            halign: 'left'
+                            size_hint_y: None
+                            height: 22
+                        Label:
+                            text: "11:00 AM - 1:00 PM"
+                            font_size: '12sp'
+                            color: (0.5, 0.5, 0.5, 1)
+                            halign: 'left'
+                            size_hint_y: None
+                            height: 22
+                        Button:
+                            text: "Add to Calendar"
+                            size_hint_y: None
+                            height: 38
+                            background_normal: ''
+                            background_color: (0, 0, 0.4, 1)
+                            canvas.before:
+                                Color:
+                                    rgba: (0.2, 0.4, 0.6, 1)
+                                RoundedRectangle:
+                                    pos: self.pos
+                                    size: self.size
+                                    radius: [19]
+                            color: (1, 1, 1, 1)
+                            bold: True
+                            on_press: root.on_add_to_calendar("Basketball Game: University vs State")
+
+                Image:
+                    source: 'USM 15.jpg'
+                    size_hint_x: 1
+                    size_hint_y: None
+                    height: 250
+                    allow_stretch: True
+                    keep_ratio: False
+                    fit_mode: 'cover'
+
+                # Event 3: Study Abroad
+                BoxLayout:
+                    orientation: 'horizontal'
+                    size_hint_y: None
+                    height: 155
+                    spacing: 15
+                    padding: [15, 15, 15, 15]
+                    canvas.before:
+                        Color:
+                            rgba: (0.98, 0.96, 0.92, 1)
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [12]
+                    
+                    Label:
+                        text: "Feb 22"
+                        size_hint_x: 0.2
+                        font_size: '15sp'
+                        color: (0, 0, 0.4, 1)
+                        bold: True
+                        halign: 'center'
+                        valign: 'middle'
+                    
+                    BoxLayout:
+                        orientation: 'vertical'
+                        size_hint_x: 0.8
+                        spacing: 6
+                        Label:
+                            text: "Study Abroad Info Session"
+                            font_size: '15sp'
+                            color: (0, 0, 0, 0.85)
+                            bold: True
+                            halign: 'left'
+                            size_hint_y: None
+                            height: 28
+                        Label:
+                            text: "International Center"
+                            font_size: '12sp'
+                            color: (0.5, 0.5, 0.5, 1)
+                            halign: 'left'
+                            size_hint_y: None
+                            height: 22
+                        Label:
+                            text: "3:00 PM - 5:00 PM"
+                            font_size: '12sp'
+                            color: (0.5, 0.5, 0.5, 1)
+                            halign: 'left'
+                            size_hint_y: None
+                            height: 22
+                        Button:
+                            text: "Add to Calendar"
+                            size_hint_y: None
+                            height: 38
+                            background_normal: ''
+                            background_color: (0, 0, 0.4, 1)
+                            canvas.before:
+                                Color:
+                                    rgba: (0.2, 0.4, 0.6, 1)
+                                RoundedRectangle:
+                                    pos: self.pos
+                                    size: self.size
+                                    radius: [19]
+                            color: (1, 1, 1, 1)
+                            bold: True
+                            on_press: root.on_add_to_calendar("Study Abroad Info Session")
+
+                Image:
+                    source: 'USM 21.jpg'
+                    size_hint_x: 1
+                    size_hint_y: None
+                    height: 250
+                    allow_stretch: True
+                    keep_ratio: False
+                    fit_mode: 'cover'
+
+                # Event 4: Movie Night
+                BoxLayout:
+                    orientation: 'horizontal'
+                    size_hint_y: None
+                    height: 155
+                    spacing: 15
+                    padding: [15, 15, 15, 15]
+                    canvas.before:
+                        Color:
+                            rgba: (0.98, 0.96, 0.92, 1)
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [12]
+                    
+                    Label:
+                        text: "Feb 25"
+                        size_hint_x: 0.2
+                        font_size: '15sp'
+                        color: (0, 0, 0.4, 1)
+                        bold: True
+                        halign: 'center'
+                        valign: 'middle'
+                    
+                    BoxLayout:
+                        orientation: 'vertical'
+                        size_hint_x: 0.8
+                        spacing: 6
+                        Label:
+                            text: "Movie Night: Oppenheimer"
+                            font_size: '15sp'
+                            color: (0, 0, 0, 0.85)
+                            bold: True
+                            halign: 'left'
+                            size_hint_y: None
+                            height: 28
+                        Label:
+                            text: "Campus Theater"
+                            font_size: '12sp'
+                            color: (0.5, 0.5, 0.5, 1)
+                            halign: 'left'
+                            size_hint_y: None
+                            height: 22
+                        Label:
+                            text: "8:00 PM - 11:00 PM"
+                            font_size: '12sp'
+                            color: (0.5, 0.5, 0.5, 1)
+                            halign: 'left'
+                            size_hint_y: None
+                            height: 22
+                        Button:
+                            text: "Add to Calendar"
+                            size_hint_y: None
+                            height: 38
+                            background_normal: ''
+                            background_color: (0, 0, 0.4, 1)
+                            canvas.before:
+                                Color:
+                                    rgba: (0.2, 0.4, 0.6, 1)
+                                RoundedRectangle:
+                                    pos: self.pos
+                                    size: self.size
+                                    radius: [19]
+                            color: (1, 1, 1, 1)
+                            bold: True
+                            on_press: root.on_add_to_calendar("Movie Night: Oppenheimer")
+
+            # Section: Local Community Events
+            BoxLayout:
+                orientation: 'vertical'
+                size_hint_y: None
+                height: self.minimum_height
+                spacing: 40
+                padding: [20, 20, 20, 20]
+                canvas.before:
+                    Color:
+                        rgba: (1, 1, 1, 1)
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [15]
+                    Color:
+                        rgba: (0, 0, 0, 0.08)
+                    RoundedRectangle:
+                        pos: (self.pos[0], self.pos[1] - 3)
+                        size: (self.size[0], self.size[1] + 6)
+                        radius: [15]
+
+                Label:
+                    text: "Local Community Events"
+                    font_size: '18sp'
+                    size_hint_y: None
+                    height: 45
+                    color: (0, 0.3, 0, 1)
+                    bold: True
+
+                Image:
+                    source: 'HA 1.jpg'
+                    size_hint_x: 1
+                    size_hint_y: None
+                    height: 250
+                    allow_stretch: True
+                    keep_ratio: False
+                    fit_mode: 'cover'
+
+                # Event 1: Downtown Food Festival
+                BoxLayout:
+                    orientation: 'horizontal'
+                    size_hint_y: None
+                    height: 155
+                    spacing: 15
+                    padding: [15, 15, 15, 15]
+                    canvas.before:
+                        Color:
+                            rgba: (0.98, 0.96, 0.92, 1)
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [12]
+                    
+                    Label:
+                        text: "Feb 21"
+                        size_hint_x: 0.2
+                        font_size: '15sp'
+                        color: (0, 0.3, 0, 1)
+                        bold: True
+                        halign: 'center'
+                        valign: 'middle'
+                    
+                    BoxLayout:
+                        orientation: 'vertical'
+                        size_hint_x: 0.8
+                        spacing: 6
+                        Label:
+                            text: "Downtown Food Festival"
+                            font_size: '15sp'
+                            color: (0, 0, 0, 0.85)
+                            bold: True
+                            halign: 'left'
+                            size_hint_y: None
+                            height: 28
+                        Label:
+                            text: "Main Street"
+                            font_size: '12sp'
+                            color: (0.5, 0.5, 0.5, 1)
+                            halign: 'left'
+                            size_hint_y: None
+                            height: 22
+                        Label:
+                            text: "12:00 PM - 8:00 PM"
+                            font_size: '12sp'
+                            color: (0.5, 0.5, 0.5, 1)
+                            halign: 'left'
+                            size_hint_y: None
+                            height: 22
+                        Button:
+                            text: "Explore"
+                            size_hint_y: None
+                            height: 38
+                            background_normal: ''
+                            background_color: (0, 0.3, 0, 1)
+                            canvas.before:
+                                Color:
+                                    rgba: (0.2, 0.6, 0.3, 1)
+                                RoundedRectangle:
+                                    pos: self.pos
+                                    size: self.size
+                                    radius: [19]
+                            color: (1, 1, 1, 1)
+                            bold: True
+                            on_press: root.on_open_link("Downtown Food Festival")
+
+                Image:
+                    source: 'USM 101.jpg'
+                    size_hint_x: 1
+                    size_hint_y: None
+                    height: 250
+                    allow_stretch: True
+                    keep_ratio: False
+                    fit_mode: 'cover'
+
+                # Event 2: Live Music - Local Bands Night
+                BoxLayout:
+                    orientation: 'horizontal'
+                    size_hint_y: None
+                    height: 155
+                    spacing: 15
+                    padding: [15, 15, 15, 15]
+                    canvas.before:
+                        Color:
+                            rgba: (0.98, 0.96, 0.92, 1)
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [12]
+                    
+                    Label:
+                        text: "Feb 23"
+                        size_hint_x: 0.2
+                        font_size: '15sp'
+                        color: (0, 0.3, 0, 1)
+                        bold: True
+                        halign: 'center'
+                        valign: 'middle'
+                    
+                    BoxLayout:
+                        orientation: 'vertical'
+                        size_hint_x: 0.8
+                        spacing: 6
+                        Label:
+                            text: "Live Music: Local Bands Night"
+                            font_size: '15sp'
+                            color: (0, 0, 0, 0.85)
+                            bold: True
+                            halign: 'left'
+                            size_hint_y: None
+                            height: 28
+                        Label:
+                            text: "The Underground Club"
+                            font_size: '12sp'
+                            color: (0.5, 0.5, 0.5, 1)
+                            halign: 'left'
+                            size_hint_y: None
+                            height: 22
+                        Label:
+                            text: "9:00 PM - 1:00 AM"
+                            font_size: '12sp'
+                            color: (0.5, 0.5, 0.5, 1)
+                            halign: 'left'
+                            size_hint_y: None
+                            height: 22
+                        Button:
+                            text: "Explore"
+                            size_hint_y: None
+                            height: 38
+                            background_normal: ''
+                            background_color: (0, 0.3, 0, 1)
+                            canvas.before:
+                                Color:
+                                    rgba: (0.2, 0.6, 0.3, 1)
+                                RoundedRectangle:
+                                    pos: self.pos
+                                    size: self.size
+                                    radius: [19]
+                            color: (1, 1, 1, 1)
+                            bold: True
+                            on_press: root.on_open_link("Live Music Local Bands Night")
+
+                Image:
+                    source: 'HA 2.jpg'
+                    size_hint_x: 1
+                    size_hint_y: None
+                    height: 250
+                    allow_stretch: True
+                    keep_ratio: False
+                    fit_mode: 'cover'
+
+                # Event 3: Farmers' Market
+                BoxLayout:
+                    orientation: 'horizontal'
+                    size_hint_y: None
+                    height: 155
+                    spacing: 15
+                    padding: [15, 15, 15, 15]
+                    canvas.before:
+                        Color:
+                            rgba: (0.98, 0.96, 0.92, 1)
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [12]
+                    
+                    Label:
+                        text: "Feb 25"
+                        size_hint_x: 0.2
+                        font_size: '15sp'
+                        color: (0, 0.3, 0, 1)
+                        bold: True
+                        halign: 'center'
+                        valign: 'middle'
+                    
+                    BoxLayout:
+                        orientation: 'vertical'
+                        size_hint_x: 0.8
+                        spacing: 6
+                        Label:
+                            text: "Farmers' Market"
+                            font_size: '15sp'
+                            color: (0, 0, 0, 0.85)
+                            bold: True
+                            halign: 'left'
+                            size_hint_y: None
+                            height: 28
+                        Label:
+                            text: "City Park"
+                            font_size: '12sp'
+                            color: (0.5, 0.5, 0.5, 1)
+                            halign: 'left'
+                            size_hint_y: None
+                            height: 22
+                        Label:
+                            text: "8:00 AM - 2:00 PM"
+                            font_size: '12sp'
+                            color: (0.5, 0.5, 0.5, 1)
+                            halign: 'left'
+                            size_hint_y: None
+                            height: 22
+                        Button:
+                            text: "Explore"
+                            size_hint_y: None
+                            height: 38
+                            background_normal: ''
+                            background_color: (0, 0.3, 0, 1)
+                            canvas.before:
+                                Color:
+                                    rgba: (0.2, 0.6, 0.3, 1)
+                                RoundedRectangle:
+                                    pos: self.pos
+                                    size: self.size
+                                    radius: [19]
+                            color: (1, 1, 1, 1)
+                            bold: True
+                            on_press: root.on_open_link("Farmers Market")
+
+                Image:
+                    source: 'HA 3.jpg'
+                    size_hint_x: 1
+                    size_hint_y: None
+                    height: 250
+                    allow_stretch: True
+                    keep_ratio: False
+                    fit_mode: 'cover'
+
+                # Event 4: Mardi Gras Parade
+                BoxLayout:
+                    orientation: 'horizontal'
+                    size_hint_y: None
+                    height: 155
+                    spacing: 15
+                    padding: [15, 15, 15, 15]
+                    canvas.before:
+                        Color:
+                            rgba: (0.98, 0.96, 0.92, 1)
+                        RoundedRectangle:
+                            pos: self.pos
+                            size: self.size
+                            radius: [12]
+                    
+                    Label:
+                        text: "Feb 26"
+                        size_hint_x: 0.2
+                        font_size: '15sp'
+                        color: (0, 0.3, 0, 1)
+                        bold: True
+                        halign: 'center'
+                        valign: 'middle'
+                    
+                    BoxLayout:
+                        orientation: 'vertical'
+                        size_hint_x: 0.8
+                        spacing: 6
+                        Label:
+                            text: "Mardi Gras Parade"
+                            font_size: '15sp'
+                            color: (0, 0, 0, 0.85)
+                            bold: True
+                            halign: 'left'
+                            size_hint_y: None
+                            height: 28
+                        Label:
+                            text: "Hardy Street"
+                            font_size: '12sp'
+                            color: (0.5, 0.5, 0.5, 1)
+                            halign: 'left'
+                            size_hint_y: None
+                            height: 22
+                        Label:
+                            text: "11:00 AM - 1:00 PM"
+                            font_size: '12sp'
+                            color: (0.5, 0.5, 0.5, 1)
+                            halign: 'left'
+                            size_hint_y: None
+                            height: 22
+                        Button:
+                            text: "Explore"
+                            size_hint_y: None
+                            height: 38
+                            background_normal: ''
+                            background_color: (0, 0.3, 0, 1)
+                            canvas.before:
+                                Color:
+                                    rgba: (0.2, 0.6, 0.3, 1)
+                                RoundedRectangle:
+                                    pos: self.pos
+                                    size: self.size
+                                    radius: [19]
+                            color: (1, 1, 1, 1)
+                            bold: True
+                            on_press: root.on_open_link("Mardi Gras Parade")
